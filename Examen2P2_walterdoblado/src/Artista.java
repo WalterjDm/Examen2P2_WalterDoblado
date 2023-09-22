@@ -1,4 +1,5 @@
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /*
@@ -10,7 +11,7 @@ import java.util.ArrayList;
  *
  * @author walter
  */
-public class Artista extends Usuario{
+public class Artista extends Usuario implements Serializable{
     private String NombreArt;
     ArrayList<Cancion> lista = new ArrayList();
      ArrayList <Cancion>album = new ArrayList();

@@ -1,4 +1,5 @@
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /*
@@ -9,7 +10,7 @@ import java.util.ArrayList;
  *
  * @author walter
  */
-public class Cliente extends Usuario {
+public class Cliente extends Usuario implements Serializable{
 
     ArrayList<Cancion> cancionFav = new ArrayList();
     ArrayList<ListaRep> listaRep = new ArrayList();

@@ -1,4 +1,5 @@
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -11,7 +12,7 @@ import java.util.Date;
  *
  * @author walter
  */
-public class Album extends Lanzamiento{
+public class Album extends Lanzamiento implements Serializable{
     
     
     ArrayList<Cancion> canciones = new ArrayList();

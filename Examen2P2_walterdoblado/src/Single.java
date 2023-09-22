@@ -1,4 +1,5 @@
 
+import java.io.Serializable;
 import java.util.Date;
 
 /*
@@ -9,7 +10,7 @@ import java.util.Date;
  *
  * @author walter
  */
-public class Single extends Lanzamiento {
+public class Single extends Lanzamiento implements Serializable{
 
     Cancion cancion;
 

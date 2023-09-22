@@ -1,4 +1,5 @@
 
+import java.io.Serializable;
 import java.util.Date;
 
 /*
@@ -10,7 +11,7 @@ import java.util.Date;
  *
  * @author walter
  */
-public class Lanzamiento {
+public class Lanzamiento implements Serializable{
     
     private String tittulo;
     private String fechaPub;

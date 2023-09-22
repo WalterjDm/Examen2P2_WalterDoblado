@@ -1,4 +1,5 @@
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /*
@@ -10,7 +11,7 @@ import java.util.ArrayList;
  *
  * @author walter
  */
-public class ListaRep {
+public class ListaRep implements Serializable{
     
     private String nombre;
     private int contLikes;

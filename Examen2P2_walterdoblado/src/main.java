@@ -1,10 +1,15 @@
 
 import java.awt.HeadlessException;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /*
@@ -20,11 +25,90 @@ public class main extends javax.swing.JFrame {
     /**
      * Creates new form main
      */
-    public main() {
+    public main() throws IOException, ClassNotFoundException {
         initComponents();
-
+        addartist();
+        addaclient();
         jLabel11.setVisible(false);
         jt_newartist.setVisible(false);
+
+    }
+
+    public void addartist() throws IOException, ClassNotFoundException {
+
+        File archivo = null;
+
+        archivo = new File("./artist.wd");
+
+        if (archivo.exists()) {
+
+            try {
+
+                FileInputStream fi = new FileInputStream(archivo);
+                ObjectInputStream oi = new ObjectInputStream(fi);
+
+//                 Object n = oi.readObject();
+                Object n;
+                try {
+
+                    while (((n = oi.readObject()) != null)) {
+
+                        if (n instanceof Artista) {
+
+                            p = (Artista) n;
+
+                            artist.add(p);
+
+                        }
+
+                    }
+                } catch (Exception e) {
+
+                }
+
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(main.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+
+    }
+
+    public void addaclient() throws IOException, ClassNotFoundException {
+
+        File archivo = null;
+
+        archivo = new File("./cliente.wd");
+
+        if (archivo.exists()) {
+
+            try {
+
+                FileInputStream fi = new FileInputStream(archivo);
+                ObjectInputStream oi = new ObjectInputStream(fi);
+
+//                 Object n = oi.readObject();
+                Object n;
+                try {
+
+                    while (((n = oi.readObject()) != null)) {
+
+                        if (n instanceof Usuario) {
+
+                            p1 = (Cliente) n;
+
+                            user.add(p1);
+
+                        }
+
+                    }
+                } catch (Exception e) {
+
+                }
+
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(main.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
 
     }
 
@@ -138,10 +222,13 @@ public class main extends javax.swing.JFrame {
                                         .addGap(34, 34, 34)
                                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jp_newpas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(jt_newartist, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                 .addGap(0, 0, Short.MAX_VALUE)))
                         .addGap(32, 32, 32))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(54, 54, 54))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -175,9 +262,9 @@ public class main extends javax.swing.JFrame {
                 .addComponent(jLabel11)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jt_newartist, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30))
+                .addGap(25, 25, 25))
         );
 
         javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
@@ -378,75 +465,93 @@ public class main extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
 
-        if (jRadioButton1.isSelected()) {
-            if (Integer.parseInt(jt_edad.getText()) >= 18) {
-
-                Artista use = new Artista(jt_newartist.getText(), jt_newnombre.getText(), jp_newpas.getText(), Integer.parseInt(jt_edad.getText()));
-                File file = new File("./artistas.wd");
-                FileOutputStream entrada = null;
-                try {
-                    ObjectOutputStream object = null;
-
-                    entrada = new FileOutputStream(file);
-
-                    object = new ObjectOutputStream(entrada);
-                    
-                    object.writeObject(use);
-                    
-                    object.flush();
-                    object.close();
-                    entrada.close();
-                    JOptionPane.showMessageDialog(null, "artista creado");
-                    artist.add(use);
-                    
-
-                } catch (HeadlessException | IOException e) {
-
-                }
-
-            } else {
-
-                JOptionPane.showMessageDialog(this, "no es mayor de 18");
-            }
-
-        }else if (!(jRadioButton1.isSelected())) {
-            
-            
-            if (Integer.parseInt(jt_edad.getText()) >= 12) {
-                
-                Cliente cl = new Cliente(jt_newnombre.getText(), jp_newpas.getText(), Integer.parseInt(jt_edad.getText()));
-                                File file = new File("./cliente.wd");
-                FileOutputStream entrada = null;
-                try {
-                    ObjectOutputStream object = null;
-
-                    entrada = new FileOutputStream(file);
-
-                    object = new ObjectOutputStream(entrada);
-                    
-                    object.writeObject(cl);
-                    
-                    object.flush();
-                    object.close();
-                    entrada.close();
-                    JOptionPane.showMessageDialog(null, "artista creado");
-                   user.add(cl);
-                   
-                    
-
-                } catch (HeadlessException | IOException e) {
-
-                }
-            }else{
-                 JOptionPane.showMessageDialog(this, "no es mayor de 12");
-            }
-        }
-
 
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+
+        if (jRadioButton1.isSelected()) {
+            if (Integer.parseInt(jt_edad.getText()) >= 18) {
+
+                for (Artista art : artist) {
+
+                    if (!(art.getNombreArt().toString().equals(jt_newartist.getText()) && art.getUserName().toString().equals(jt_newnombre.getText()))) {
+
+                        Artista use = new Artista(jt_newartist.getText(), jt_newnombre.getText(), jp_newpas.getText(), Integer.parseInt(jt_edad.getText()));
+                        File file = new File("./artistas.wd");
+                        FileOutputStream entrada = null;
+                        try {
+                            ObjectOutputStream object = null;
+
+                            entrada = new FileOutputStream(file);
+
+                            object = new ObjectOutputStream(entrada);
+                            artist.add(use);
+
+                            for (Artista artista : artist) {
+                                object.writeObject(artista);
+                            }
+
+                            object.flush();
+                            object.close();
+                            entrada.close();
+                            JOptionPane.showMessageDialog(null, "artista creado");
+
+                        } catch (HeadlessException | IOException e) {
+
+                        }
+                    } else {
+                        JOptionPane.showMessageDialog(null, "nombre de usuario ya en uso");
+                    }
+                }
+            } else {
+
+                JOptionPane.showMessageDialog(this, "no es mayor de 18");
+            }
+
+        } else if (!(jRadioButton1.isSelected())) {
+
+            if (Integer.parseInt(jt_edad.getText()) >= 12) {
+
+                for (Cliente cliente1 : user) {
+
+                    if (!(cliente1.getUserName().toString().equals(jt_newnombre.getText()))) {
+
+                        Cliente cl = new Cliente(jt_newnombre.getText(), jp_newpas.getText(), Integer.parseInt(jt_edad.getText()));
+                        File file = new File("./cliente.wd");
+                        FileOutputStream entrada = null;
+                        try {
+                            ObjectOutputStream object = null;
+
+                            entrada = new FileOutputStream(file);
+
+                            object = new ObjectOutputStream(entrada);
+                            user.add(cl);
+                            for (Cliente cliente : user) {
+                                object.writeObject(cliente);
+                            }
+
+                            object.flush();
+                            object.close();
+                            entrada.close();
+                            JOptionPane.showMessageDialog(null, "artista creado");
+
+                        } catch (HeadlessException | IOException e) {
+
+                        }
+                    } else {
+                        JOptionPane.showMessageDialog(null, "nombre de usuario ya en uso");
+                    }
+
+                }
+            } else {
+                JOptionPane.showMessageDialog(this, "no es mayor de 12");
+            }
+
+        }
+
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
@@ -479,7 +584,13 @@ public class main extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new main().setVisible(true);
+                try {
+                    new main().setVisible(true);
+                } catch (IOException ex) {
+                    Logger.getLogger(main.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(main.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
@@ -514,4 +625,6 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JTextField jt_newartist;
     private javax.swing.JTextField jt_newnombre;
     // End of variables declaration//GEN-END:variables
+Artista p;
+    Cliente p1;
 }

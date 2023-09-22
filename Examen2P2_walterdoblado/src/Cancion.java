@@ -1,3 +1,6 @@
+
+import java.io.Serializable;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
@@ -7,7 +10,7 @@
  *
  * @author walter
  */
-public class Cancion {
+public class Cancion implements Serializable{
     private  String titulo;
     private int duracion;
     private String ref;
