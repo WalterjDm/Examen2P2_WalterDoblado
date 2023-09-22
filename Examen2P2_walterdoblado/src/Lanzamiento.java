@@ -13,13 +13,13 @@ import java.util.Date;
 public class Lanzamiento {
     
     private String tittulo;
-    private Date fechaPub;
+    private String fechaPub;
     private int contLike;
 
     public Lanzamiento() {
     }
 
-    public Lanzamiento(String tittulo, Date fechaPub, int contLike) {
+    public Lanzamiento(String tittulo, String fechaPub, int contLike) {
         this.tittulo = tittulo;
         this.fechaPub = fechaPub;
         this.contLike = contLike;
@@ -33,11 +33,11 @@ public class Lanzamiento {
         this.tittulo = tittulo;
     }
 
-    public Date getFechaPub() {
+    public String getFechaPub() {
         return fechaPub;
     }
 
-    public void setFechaPub(Date fechaPub) {
+    public void setFechaPub(String fechaPub) {
         this.fechaPub = fechaPub;
     }
 

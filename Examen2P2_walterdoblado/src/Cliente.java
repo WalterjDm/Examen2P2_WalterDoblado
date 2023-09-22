@@ -12,8 +12,8 @@ import java.util.ArrayList;
 public class Cliente extends Usuario {
 
     ArrayList<Cancion> cancionFav = new ArrayList();
-    ArrayList<Cancion> listaRep = new ArrayList();
-    ArrayList <Cancion>listaLike = new ArrayList();
+    ArrayList<ListaRep> listaRep = new ArrayList();
+    ArrayList <ListaRep>listaLike = new ArrayList();
 
     public Cliente(String UserName, String contra, int edad) {
         super(UserName, contra, edad);
@@ -30,19 +30,19 @@ public class Cliente extends Usuario {
         this.cancionFav = cancionFav;
     }
 
-    public ArrayList<Cancion> getListaRep() {
+    public ArrayList<ListaRep> getListaRep() {
         return listaRep;
     }
 
-    public void setListaRep(ArrayList<Cancion> listaRep) {
+    public void setListaRep(ArrayList<ListaRep> listaRep) {
         this.listaRep = listaRep;
     }
 
-    public ArrayList<Cancion> getListaLike() {
+    public ArrayList<ListaRep> getListaLike() {
         return listaLike;
     }
 
-    public void setListaLike(ArrayList<Cancion> listaLike) {
+    public void setListaLike(ArrayList<ListaRep> listaLike) {
         this.listaLike = listaLike;
     }
 

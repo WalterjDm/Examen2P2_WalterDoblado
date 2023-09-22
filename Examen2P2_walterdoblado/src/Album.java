@@ -20,7 +20,7 @@ public class Album extends Lanzamiento{
     public Album() {
     }
 
-    public Album(String tittulo, Date fechaPub, int contLike) {
+    public Album(String tittulo, String fechaPub, int contLike) {
         super(tittulo, fechaPub, contLike);
     }
 
