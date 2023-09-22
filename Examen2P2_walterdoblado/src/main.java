@@ -1,15 +1,19 @@
 
 import java.awt.HeadlessException;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.DefaultListModel;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /*
@@ -138,6 +142,46 @@ public class main extends javax.swing.JFrame {
         jt_newartist = new javax.swing.JTextField();
         jDialog2 = new javax.swing.JDialog();
         jPanel3 = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jPanel5 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTree1 = new javax.swing.JTree();
+        jPanel6 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList<>();
+        jPanel7 = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jList2 = new javax.swing.JList<>();
+        pn = new javax.swing.JProgressBar();
+        jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        jButton13 = new javax.swing.JButton();
+        jDialog3 = new javax.swing.JDialog();
+        jPanel8 = new javax.swing.JPanel();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel9 = new javax.swing.JPanel();
+        jLabel16 = new javax.swing.JLabel();
+        jt_albumtit = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
+        jt_fechlanza = new javax.swing.JTextField();
+        jButton10 = new javax.swing.JButton();
+        jPanel10 = new javax.swing.JPanel();
+        jLabel18 = new javax.swing.JLabel();
+        jTextField5 = new javax.swing.JTextField();
+        jButton11 = new javax.swing.JButton();
+        jPanel11 = new javax.swing.JPanel();
+        jLabel13 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jSpinner1 = new javax.swing.JSpinner();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        jButton9 = new javax.swing.JButton();
+        jPanel12 = new javax.swing.JPanel();
+        jButton12 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -282,30 +326,380 @@ public class main extends javax.swing.JFrame {
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        jPanel3.setBackground(new java.awt.Color(0, 0, 0));
+
+        jPanel4.setBackground(new java.awt.Color(102, 102, 102));
+
+        jButton4.setText("jButton4");
+
+        jButton5.setText("jButton5");
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton5)
+                    .addComponent(jButton4))
+                .addContainerGap(163, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButton4)
+                .addGap(18, 18, 18)
+                .addComponent(jButton5)
+                .addContainerGap(15, Short.MAX_VALUE))
+        );
+
+        jTree1.setBackground(new java.awt.Color(102, 102, 102));
+        javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("root");
+        jTree1.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
+        jScrollPane1.setViewportView(jTree1);
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1)
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1)
+        );
+
+        jPanel6.setBackground(new java.awt.Color(102, 102, 102));
+
+        jList1.setModel(new DefaultListModel());
+        jScrollPane2.setViewportView(jList1);
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 511, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(15, Short.MAX_VALUE))
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 492, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(20, Short.MAX_VALUE))
+        );
+
+        jPanel7.setBackground(new java.awt.Color(102, 102, 102));
+
+        jList2.setModel(new DefaultListModel());
+        jScrollPane3.setViewportView(jList2);
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(15, Short.MAX_VALUE))
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 510, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jButton6.setText("jButton6");
+        jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton6MouseClicked(evt);
+            }
+        });
+
+        jButton7.setText("jButton7");
+
+        jButton8.setText("jButton8");
+
+        jButton13.setText("log out");
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton13ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1026, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(212, 212, 212)
+                        .addComponent(pn, javax.swing.GroupLayout.PREFERRED_SIZE, 611, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
+                            .addGap(388, 388, 388)
+                            .addComponent(jButton7)
+                            .addGap(18, 18, 18)
+                            .addComponent(jButton6)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(jButton8))
+                        .addGroup(jPanel3Layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGap(18, 18, 18)
+                            .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jButton13)))))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 613, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(43, 43, 43)
+                                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(15, 15, 15)
+                                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton6)
+                            .addComponent(jButton7)
+                            .addComponent(jButton8)))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jButton13)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addComponent(pn, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16))
         );
 
         javax.swing.GroupLayout jDialog2Layout = new javax.swing.GroupLayout(jDialog2.getContentPane());
         jDialog2.getContentPane().setLayout(jDialog2Layout);
         jDialog2Layout.setHorizontalGroup(
             jDialog2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDialog2Layout.createSequentialGroup()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jDialog2Layout.setVerticalGroup(
             jDialog2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDialog2Layout.createSequentialGroup()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        jPanel8.setBackground(new java.awt.Color(0, 0, 0));
+
+        jLabel16.setText("tittulo");
+
+        jLabel17.setText("fecha de lanzamiento");
+
+        jButton10.setText("jButton10");
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGap(47, 47, 47)
+                        .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGap(108, 108, 108)
+                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jt_fechlanza, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jt_albumtit, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGap(162, 162, 162)
+                        .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(656, Short.MAX_VALUE))
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGap(74, 74, 74)
+                .addComponent(jLabel16)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jt_albumtit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(57, 57, 57)
+                .addComponent(jLabel17)
+                .addGap(18, 18, 18)
+                .addComponent(jt_fechlanza, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 121, Short.MAX_VALUE)
+                .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(46, 46, 46))
+        );
+
+        jTabbedPane1.addTab("Album ", jPanel9);
+
+        jLabel18.setText("cancion");
+
+        jButton11.setText("crear");
+
+        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addGap(92, 92, 92)
+                        .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addGap(117, 117, 117)
+                        .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addGap(51, 51, 51)
+                        .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(693, Short.MAX_VALUE))
+        );
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addGap(72, 72, 72)
+                .addComponent(jLabel18)
+                .addGap(30, 30, 30)
+                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 129, Short.MAX_VALUE)
+                .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(116, 116, 116))
+        );
+
+        jTabbedPane1.addTab("single", jPanel10);
+
+        jLabel13.setText("jLabel13");
+
+        jTextField1.setText("jTextField1");
+
+        jLabel14.setText("jLabel14");
+
+        jLabel15.setText("jLabel15");
+
+        jTextField2.setText("jTextField2");
+
+        jButton9.setText("jButton9");
+
+        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
+        jPanel11.setLayout(jPanel11Layout);
+        jPanel11Layout.setHorizontalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel11Layout.createSequentialGroup()
+                                .addGap(71, 71, 71)
+                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel11Layout.createSequentialGroup()
+                                .addGap(16, 16, 16)
+                                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addGap(254, 254, 254)
+                        .addComponent(jButton9)))
+                .addContainerGap(699, Short.MAX_VALUE))
+        );
+        jPanel11Layout.setVerticalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addGap(79, 79, 79)
+                .addComponent(jLabel13)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addComponent(jLabel14)
+                .addGap(3, 3, 3)
+                .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38)
+                .addComponent(jLabel15)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
+                .addComponent(jButton9)
+                .addGap(100, 100, 100))
+        );
+
+        jTabbedPane1.addTab("Crear cancion", jPanel11);
+
+        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
+        jPanel12.setLayout(jPanel12Layout);
+        jPanel12Layout.setHorizontalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1028, Short.MAX_VALUE)
+        );
+        jPanel12Layout.setVerticalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 465, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("ListaRep", jPanel12);
+
+        jButton12.setText("log out");
+        jButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton12ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton12)
+                .addGap(31, 31, 31))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                .addGap(0, 21, Short.MAX_VALUE)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1028, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(jButton12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 496, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        javax.swing.GroupLayout jDialog3Layout = new javax.swing.GroupLayout(jDialog3.getContentPane());
+        jDialog3.getContentPane().setLayout(jDialog3Layout);
+        jDialog3Layout.setHorizontalGroup(
+            jDialog3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jDialog3Layout.setVerticalGroup(
+            jDialog3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -321,7 +715,6 @@ public class main extends javax.swing.JFrame {
 
         jt_ingresousuario.setBackground(new java.awt.Color(51, 51, 51));
         jt_ingresousuario.setForeground(new java.awt.Color(255, 255, 255));
-        jt_ingresousuario.setText("Nombre");
         jt_ingresousuario.setBorder(null);
         jt_ingresousuario.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -338,7 +731,6 @@ public class main extends javax.swing.JFrame {
 
         jt_ingresocontra.setBackground(new java.awt.Color(51, 51, 51));
         jt_ingresocontra.setForeground(new java.awt.Color(255, 255, 255));
-        jt_ingresocontra.setText("jPasswordField1");
         jt_ingresocontra.setBorder(null);
         jt_ingresocontra.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -470,7 +862,7 @@ public class main extends javax.swing.JFrame {
 
     private void jt_ingresocontraMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jt_ingresocontraMouseClicked
         // TODO add your handling code here:
-        jt_ingresousuario.setText("");
+        jt_ingresocontra.setText("");
     }//GEN-LAST:event_jt_ingresocontraMouseClicked
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
@@ -506,132 +898,118 @@ public class main extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
 
-        
         if (!(jRadioButton2.isSelected())) {
-            
-        
-        
+
             for (Cliente cliente : user) {
-            
+
                 if (cliente.getUserName().equals(jt_ingresousuario.getText()) && cliente.getContra().equals(jt_ingresocontra.getText())) {
-                    
-                    
-                    
-                    
-                    
-                    
-                }else{
+
+                    jDialog2.pack();
+                    jDialog2.setModal(true);
+                    jDialog2.setLocationRelativeTo(this);
+                    jDialog2.setVisible(true);
+
+                    jt_ingresousuario.setText("");
+                    jt_ingresocontra.setText("");
+                    jDialog2.setAlwaysOnTop(true);
+                    clglobal = cliente;
+                } else {
                     JOptionPane.showMessageDialog(null, "nombre o contraseña incorrecta");
                 }
-                    
-                
-                
-        }
-            
-        }else if (jRadioButton2.isSelected()) {
-            
-            for (Artista artista : artist) {
-                
-               
-                if (artista.getUserName().equals(jt_ingresousuario.getText()) && artista.getContra().equals(jt_ingresocontra.getText())) {
-                    
-                    
-                    
-                    
-                    
-                    
-                }else{
-                            JOptionPane.showMessageDialog(null, "nombre o contraseña incorrecta");
-                }
-                
-                
-                
-            }
-            
-            
-            
-        }
-        
-        
-        
-        
 
-        
-        
-        
-        
+            }
+
+        } else if (jRadioButton2.isSelected()) {
+
+            for (Artista artista : artist) {
+
+                if (artista.getUserName().equals(jt_ingresousuario.getText()) && artista.getContra().equals(jt_ingresocontra.getText())) {
+
+                    jDialog3.pack();
+                    jDialog3.setModal(true);
+                    jDialog3.setLocationRelativeTo(this);
+                    jDialog3.setVisible(true);
+
+                    jt_ingresousuario.setText("");
+                    jt_ingresocontra.setText("");
+                    artglobal = artista;
+                    jDialog3.setAlwaysOnTop(true);
+                } else {
+                    JOptionPane.showMessageDialog(null, "nombre o contraseña incorrecta");
+                }
+
+            }
+
+        }
+
+
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
 
         if (jRadioButton1.isSelected()) {
-            
+
             if (Integer.parseInt(jt_edad.getText()) >= 18) {
                 if (artist.isEmpty()) {
-                    
-                     Artista use = new Artista(jt_newartist.getText(), jt_newnombre.getText(), jp_newpas.getText(), Integer.parseInt(jt_edad.getText()));
-                        File file = new File("./artistas.wd");
-                        FileOutputStream entrada = null;
-                        try {
-                            ObjectOutputStream object = null;
 
-                            entrada = new FileOutputStream(file);
+                    Artista use = new Artista(jt_newartist.getText(), jt_newnombre.getText(), jp_newpas.getText(), Integer.parseInt(jt_edad.getText()));
+                    File file = new File("./artistas.wd");
+                    FileOutputStream entrada = null;
+                    try {
+                        ObjectOutputStream object = null;
 
-                            object = new ObjectOutputStream(entrada);
-                            artist.add(use);
+                        entrada = new FileOutputStream(file);
 
-                            for (Artista artista : artist) {
-                                object.writeObject(artista);
-                            }
+                        object = new ObjectOutputStream(entrada);
+                        artist.add(use);
 
-                            object.flush();
-                            object.close();
-                            entrada.close();
-                            JOptionPane.showMessageDialog(null, "artista creado");
-
-                        } catch (HeadlessException | IOException e) {
-
+                        for (Artista artista : artist) {
+                            object.writeObject(artista);
                         }
-                    
-                    
-                    
-                    
-                }else{
-                
-                
-                
-                for (Artista art : artist) {
 
-                    if (!(art.getNombreArt().toString().equals(jt_newartist.getText()) && art.getUserName().toString().equals(jt_newnombre.getText()))) {
+                        object.flush();
+                        object.close();
+                        entrada.close();
+                        JOptionPane.showMessageDialog(null, "artista creado");
 
-                        Artista use = new Artista(jt_newartist.getText(), jt_newnombre.getText(), jp_newpas.getText(), Integer.parseInt(jt_edad.getText()));
-                        File file = new File("./artistas.wd");
-                        FileOutputStream entrada = null;
-                        try {
-                            ObjectOutputStream object = null;
+                    } catch (HeadlessException | IOException e) {
 
-                            entrada = new FileOutputStream(file);
-
-                            object = new ObjectOutputStream(entrada);
-                            artist.add(use);
-
-                            for (Artista artista : artist) {
-                                object.writeObject(artista);
-                            }
-
-                            object.flush();
-                            object.close();
-                            entrada.close();
-                            JOptionPane.showMessageDialog(null, "artista creado");
-
-                        } catch (HeadlessException | IOException e) {
-
-                        }
-                    } else {
-                        JOptionPane.showMessageDialog(null, "nombre de usuario ya en uso");
                     }
-                }
+
+                } else {
+
+                    for (Artista art : artist) {
+
+                        if (!(art.getNombreArt().toString().equals(jt_newartist.getText()) && art.getUserName().toString().equals(jt_newnombre.getText()))) {
+
+                            Artista use = new Artista(jt_newartist.getText(), jt_newnombre.getText(), jp_newpas.getText(), Integer.parseInt(jt_edad.getText()));
+                            File file = new File("./artistas.wd");
+                            FileOutputStream entrada = null;
+                            try {
+                                ObjectOutputStream object = null;
+
+                                entrada = new FileOutputStream(file);
+
+                                object = new ObjectOutputStream(entrada);
+                                artist.add(use);
+
+                                for (Artista artista : artist) {
+                                    object.writeObject(artista);
+                                }
+
+                                object.flush();
+                                object.close();
+                                entrada.close();
+                                JOptionPane.showMessageDialog(null, "artista creado");
+
+                            } catch (HeadlessException | IOException e) {
+
+                            }
+                        } else {
+                            JOptionPane.showMessageDialog(null, "nombre de usuario ya en uso");
+                        }
+                    }
                 }
             } else {
 
@@ -641,66 +1019,65 @@ public class main extends javax.swing.JFrame {
         } else if (!(jRadioButton1.isSelected())) {
             System.out.println("si");
             if (Integer.parseInt(jt_edad.getText()) >= 12) {
-                    
+
                 if (user.isEmpty()) {
                     System.out.println("nananana");
-                     Cliente cl = new Cliente(jt_newnombre.getText(), jp_newpas.getText(), Integer.parseInt(jt_edad.getText()));
-                        File file = new File("./cliente.wd");
-                        FileOutputStream entrada = null;
-                        try {
-                            ObjectOutputStream object = null;
+                    Cliente cl = new Cliente(jt_newnombre.getText(), jp_newpas.getText(), Integer.parseInt(jt_edad.getText()));
+                    File file = new File("./cliente.wd");
+                    FileOutputStream entrada = null;
+                    try {
+                        ObjectOutputStream object = null;
 
-                            entrada = new FileOutputStream(file);
+                        entrada = new FileOutputStream(file);
 
-                            object = new ObjectOutputStream(entrada);
-                            user.add(cl);
-                            for (Cliente cliente : user) {
-                                object.writeObject(cliente);
-                            }
-
-                            object.flush();
-                            object.close();
-                            entrada.close();
-                            JOptionPane.showMessageDialog(null, "artista creado");
-
-                        } catch (HeadlessException | IOException e) {
-
+                        object = new ObjectOutputStream(entrada);
+                        user.add(cl);
+                        for (Cliente cliente : user) {
+                            object.writeObject(cliente);
                         }
-            
-                    
-                }else{
-                
-                for (Cliente cliente1 : user) {
-                    
-                    System.out.println("no");
-                    if (!(cliente1.getUserName().toString().equals(jt_newnombre.getText()))) {
 
-                        Cliente cl = new Cliente(jt_newnombre.getText(), jp_newpas.getText(), Integer.parseInt(jt_edad.getText()));
-                        File file = new File("./cliente.wd");
-                        FileOutputStream entrada = null;
-                        try {
-                            ObjectOutputStream object = null;
+                        object.flush();
+                        object.close();
+                        entrada.close();
+                        JOptionPane.showMessageDialog(null, "artista creado");
 
-                            entrada = new FileOutputStream(file);
+                    } catch (HeadlessException | IOException e) {
 
-                            object = new ObjectOutputStream(entrada);
-                            user.add(cl);
-                            for (Cliente cliente : user) {
-                                object.writeObject(cliente);
-                            }
-
-                            object.flush();
-                            object.close();
-                            entrada.close();
-                            JOptionPane.showMessageDialog(null, "artista creado");
-
-                        } catch (HeadlessException | IOException e) {
-
-                        }
-                    } else {
-                        JOptionPane.showMessageDialog(null, "nombre de usuario ya en uso");
                     }
-                }
+
+                } else {
+
+                    for (Cliente cliente1 : user) {
+
+                        System.out.println("no");
+                        if (!(cliente1.getUserName().toString().equals(jt_newnombre.getText()))) {
+
+                            Cliente cl = new Cliente(jt_newnombre.getText(), jp_newpas.getText(), Integer.parseInt(jt_edad.getText()));
+                            File file = new File("./cliente.wd");
+                            FileOutputStream entrada = null;
+                            try {
+                                ObjectOutputStream object = null;
+
+                                entrada = new FileOutputStream(file);
+
+                                object = new ObjectOutputStream(entrada);
+                                user.add(cl);
+                                for (Cliente cliente : user) {
+                                    object.writeObject(cliente);
+                                }
+
+                                object.flush();
+                                object.close();
+                                entrada.close();
+                                JOptionPane.showMessageDialog(null, "artista creado");
+
+                            } catch (HeadlessException | IOException e) {
+
+                            }
+                        } else {
+                            JOptionPane.showMessageDialog(null, "nombre de usuario ya en uso");
+                        }
+                    }
                 }
             } else {
                 JOptionPane.showMessageDialog(this, "no es mayor de 12");
@@ -710,6 +1087,86 @@ public class main extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
+        // TODO add your handling code here:
+        int num = 5;
+        ab = new Barra(pn, num);
+        ab.start();
+        Thread proceso2 = new Thread();
+        proceso2.start();
+        try {
+            ab.sleep(100);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }//GEN-LAST:event_jButton6MouseClicked
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        // TODO add your handling code here:
+
+        for (Artista artista : artist) {
+
+            if (artista.getNombreArt().equals(artglobal.getNombreArt())) {
+                File archivo = null;
+                FileWriter fw = null;
+                BufferedWriter bw = null;
+
+                try {
+                    archivo = new File("./album.txt");
+                    fw = new FileWriter(archivo, true);///en false crea una nueva carpeta si no hay
+                    bw = new BufferedWriter(fw);
+                    bw.write(jt_albumtit.getText() + ";" + jt_fechlanza.getText() + ";" + 0 + ";" + 20);
+
+                    artista.getAlbum().add(new Album(jt_albumtit.getText(), jt_fechlanza.getText(), 0, 20));
+                    artglobal.getAlbum().add(new Album(jt_albumtit.getText(), jt_fechlanza.getText(), 0, 20));
+
+                    bw.newLine();
+                    bw.flush();
+
+                    JOptionPane.showMessageDialog(this,
+                            "album agregado correctamente");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                try {
+                    bw.close();
+                    fw.close();
+                } catch (IOException ex) {
+                    Logger.getLogger(main.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+            }else{
+                   JOptionPane.showMessageDialog(this,
+                            "no se creo");
+            }
+        }
+
+
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+        // TODO add your handling code here:
+        jDialog2.pack();
+        jDialog2.setModal(false);
+        jDialog2.setLocationRelativeTo(this);
+        jDialog2.setVisible(false);
+
+        clglobal = null;
+
+    }//GEN-LAST:event_jButton13ActionPerformed
+
+    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+        // TODO add your handling code here:
+
+        jDialog3.pack();
+        jDialog3.setModal(false);
+        jDialog3.setLocationRelativeTo(this);
+        jDialog3.setVisible(false);
+
+        artglobal = null;
+    }//GEN-LAST:event_jButton12ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -753,16 +1210,35 @@ public class main extends javax.swing.JFrame {
     }
     ArrayList<Cliente> user = new ArrayList();
     ArrayList<Artista> artist = new ArrayList();
+    Artista artglobal = null;
+    Cliente clglobal = null;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
+    private javax.swing.JButton jButton12;
+    private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JDialog jDialog2;
+    private javax.swing.JDialog jDialog3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -771,21 +1247,45 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JList<String> jList1;
+    private javax.swing.JList<String> jList2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSpinner jSpinner1;
+    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTree jTree1;
     private javax.swing.JPasswordField jp_newpas;
+    private javax.swing.JTextField jt_albumtit;
     private javax.swing.JTextField jt_edad;
+    private javax.swing.JTextField jt_fechlanza;
     private javax.swing.JPasswordField jt_ingresocontra;
     private javax.swing.JTextField jt_ingresousuario;
     private javax.swing.JTextField jt_newartist;
     private javax.swing.JTextField jt_newnombre;
+    private javax.swing.JProgressBar pn;
     // End of variables declaration//GEN-END:variables
 Artista p;
     Cliente p1;
+    Barra ab;
 }

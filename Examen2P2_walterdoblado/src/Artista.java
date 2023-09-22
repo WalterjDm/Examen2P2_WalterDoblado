@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class Artista extends Usuario implements Serializable{
     private String NombreArt;
     ArrayList<Cancion> lista = new ArrayList();
-     ArrayList <Cancion>album = new ArrayList();
+     ArrayList <Album>album = new ArrayList();
 
     public Artista(String NombreArt, String UserName, String contra, int edad) {
         super(UserName, contra, edad);
@@ -40,11 +40,11 @@ public class Artista extends Usuario implements Serializable{
         this.lista = lista;
     }
 
-    public ArrayList<Cancion> getAlbum() {
+    public ArrayList<Album> getAlbum() {
         return album;
     }
 
-    public void setAlbum(ArrayList<Cancion> album) {
+    public void setAlbum(ArrayList<Album> album) {
         this.album = album;
     }
 

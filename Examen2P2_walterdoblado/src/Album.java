@@ -16,13 +16,14 @@ public class Album extends Lanzamiento implements Serializable{
     
     
     ArrayList<Cancion> canciones = new ArrayList();
-    ArrayList<Cancion> cantCanciones  = new ArrayList();
+   private int cantCanciones;
 
     public Album() {
     }
 
-    public Album(String tittulo, String fechaPub, int contLike) {
+    public Album(String tittulo, String fechaPub, int contLike,int cantCanciones) {
         super(tittulo, fechaPub, contLike);
+        this.cantCanciones = cantCanciones;
     }
 
     public ArrayList<Cancion> getCanciones() {
@@ -33,13 +34,14 @@ public class Album extends Lanzamiento implements Serializable{
         this.canciones = canciones;
     }
 
-    public ArrayList<Cancion> getCantCanciones() {
+    public int getCantCanciones() {
         return cantCanciones;
     }
 
-    public void setCantCanciones(ArrayList<Cancion> cantCanciones) {
+    public void setCantCanciones(int cantCanciones) {
         this.cantCanciones = cantCanciones;
     }
+
 
  
 
