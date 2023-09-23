@@ -1369,20 +1369,44 @@ public class main extends javax.swing.JFrame {
             }
 
         }
-  for (Artista artista : artist) {
+        for (Artista artista : artist) {
+            System.out.println(artglobal);
+            if (artista.getUserName().equals(artglobal.getUserName())) {
+                File archivo = null;
+                FileWriter fw = null;
+                BufferedWriter bw = null;
 
-            for (int i = 0; i < artista.getAlbum().size(); i++) {
+                try {
+                    archivo = new File("./musica.txt");
+                    fw = new FileWriter(archivo, true);///en false crea una nueva carpeta si no hay
+                    bw = new BufferedWriter(fw);
+                    bw.write(jt_nomcancion.getText() + ";" + jSpinner1.getValue() + ";"+artglobal.getAlbum());
 
-                for (int j = 0; j < artista.getAlbum().get(i).getCanciones().size(); j++) {
+                   
 
-                    modelo.addElement(artista.getAlbum().get(i).getCanciones().get(j));
+                    bw.newLine();
+                    bw.flush();
 
+                    JOptionPane.showMessageDialog(this,
+                            "cancion agregarda  correctamente");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                try {
+                    bw.close();
+                    fw.close();
+                } catch (IOException ex) {
+                    Logger.getLogger(main.class.getName()).log(Level.SEVERE, null, ex);
                 }
 
+            } else {
+                JOptionPane.showMessageDialog(this,
+                        "no se creo");
             }
-
         }
-        jList1.setModel(modelo);
+        
+        
+  
 
     }//GEN-LAST:event_jButton9ActionPerformed
 
