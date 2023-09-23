@@ -57,7 +57,7 @@ public class Barra extends Thread {
             if (avanzar) {
             
                 barra.setValue(barra.getValue() + num);
-                if (barra.getValue() == 1000) {
+                if (barra.getValue() == 100) {
                     vive = false;
                 }
             } //FIN IF

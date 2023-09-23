@@ -192,8 +192,12 @@ public class main extends javax.swing.JFrame {
         jButton10 = new javax.swing.JButton();
         jPanel10 = new javax.swing.JPanel();
         jLabel18 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
+        jt_cancion = new javax.swing.JTextField();
         jButton11 = new javax.swing.JButton();
+        jt_albumtit1 = new javax.swing.JTextField();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jt_fechlanza1 = new javax.swing.JTextField();
         jPanel11 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         jt_nomcancion = new javax.swing.JTextField();
@@ -610,6 +614,15 @@ public class main extends javax.swing.JFrame {
         jLabel18.setText("cancion");
 
         jButton11.setText("crear");
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
+
+        jLabel19.setText("tittulo");
+
+        jLabel20.setText("fecha de lanzamiento");
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
@@ -618,26 +631,46 @@ public class main extends javax.swing.JFrame {
             .addGroup(jPanel10Layout.createSequentialGroup()
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel10Layout.createSequentialGroup()
-                        .addGap(92, 92, 92)
-                        .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(22, 22, 22)
+                        .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel10Layout.createSequentialGroup()
+                                .addGap(15, 15, 15)
+                                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel10Layout.createSequentialGroup()
+                                .addGap(76, 76, 76)
+                                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jt_fechlanza1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jt_albumtit1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel10Layout.createSequentialGroup()
-                        .addGap(117, 117, 117)
-                        .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(43, 43, 43)
+                        .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel10Layout.createSequentialGroup()
-                        .addGap(51, 51, 51)
-                        .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(693, Short.MAX_VALUE))
+                        .addGap(87, 87, 87)
+                        .addComponent(jt_cancion, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addGap(287, 287, 287)
+                        .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(523, Short.MAX_VALUE))
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel10Layout.createSequentialGroup()
-                .addGap(72, 72, 72)
+                .addGap(49, 49, 49)
                 .addComponent(jLabel18)
-                .addGap(30, 30, 30)
-                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 129, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jt_cancion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel19)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jt_albumtit1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(57, 57, 57)
+                .addComponent(jLabel20)
+                .addGap(18, 18, 18)
+                .addComponent(jt_fechlanza1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50)
                 .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(116, 116, 116))
+                .addContainerGap(55, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("single", jPanel10);
@@ -648,14 +681,14 @@ public class main extends javax.swing.JFrame {
 
         jLabel14.setText("jLabel14");
 
-        jButton9.setText("jButton9");
+        jButton9.setText("agregar");
         jButton9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton9ActionPerformed(evt);
             }
         });
 
-        jButton14.setText("jButton14");
+        jButton14.setText("actualizar");
         jButton14.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton14ActionPerformed(evt);
@@ -1283,7 +1316,6 @@ public class main extends javax.swing.JFrame {
                 idvent.add(nombrecomp);
                 idvent.add(idcarro);
                 raiz.add(idvent);
-                
 
             }
             m.reload();
@@ -1295,6 +1327,9 @@ public class main extends javax.swing.JFrame {
             Logger.getLogger(main.class.getName()).log(Level.SEVERE, null, ex);
         }
 
+        
+        
+        
 
     }//GEN-LAST:event_jTabbedPane1StateChanged
 
@@ -1315,7 +1350,8 @@ public class main extends javax.swing.JFrame {
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         // TODO add your handling code here:
         jComboBox1.getSelectedItem();
-
+     DefaultListModel modelo
+                = (DefaultListModel) jList1.getModel();
         for (Artista artista : artist) {
 
             if (artista.getUserName().equals(jComboBox1.getSelectedItem())) {
@@ -1326,18 +1362,35 @@ public class main extends javax.swing.JFrame {
 
                     artista.getAlbum().get(i).canciones.add(new Cancion(jt_nomcancion.getText(), s, ""));
 
+                    JOptionPane.showMessageDialog(this, "agregado");
+                    
                 }
 
             }
 
         }
+  for (Artista artista : artist) {
 
+            for (int i = 0; i < artista.getAlbum().size(); i++) {
+
+                for (int j = 0; j < artista.getAlbum().get(i).getCanciones().size(); j++) {
+
+                    modelo.addElement(artista.getAlbum().get(i).getCanciones().get(j));
+
+                }
+
+            }
+
+        }
+        jList1.setModel(modelo);
 
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
         // TODO add your handling code here:
 
+        DefaultListModel modelo
+                = (DefaultListModel) jList1.getModel();
         File archivo = null;
         FileReader fr = null;
         BufferedReader br = null;
@@ -1378,6 +1431,20 @@ public class main extends javax.swing.JFrame {
             Logger.getLogger(main.class.getName()).log(Level.SEVERE, null, ex);
         }
 
+        for (Artista artista : artist) {
+
+            for (int i = 0; i < artista.getAlbum().size(); i++) {
+
+                for (int j = 0; j < artista.getAlbum().get(i).getCanciones().size(); j++) {
+
+                    modelo.addElement(artista.getAlbum().get(i).getCanciones().get(j));
+
+                }
+
+            }
+
+        }
+        jList1.setModel(modelo);
 
     }//GEN-LAST:event_jButton15ActionPerformed
 
@@ -1423,6 +1490,48 @@ public class main extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_jm_agregarActionPerformed
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        // TODO add your handling code here:
+
+        for (Artista artista : artist) {
+            System.out.println(artglobal);
+            if (artista.getUserName().equals(artglobal.getUserName())) {
+                File archivo = null;
+                FileWriter fw = null;
+                BufferedWriter bw = null;
+
+                try {
+                    archivo = new File("./album.txt");
+                    fw = new FileWriter(archivo, true);///en false crea una nueva carpeta si no hay
+                    bw = new BufferedWriter(fw);
+                    bw.write(jt_cancion + ";" + jt_albumtit1.getText() + ";" + jt_fechlanza1.getText() + ";" + 0 + ";" + 20);
+
+//                    artista.getAlbum().add(new Single(jt_cancion.getText(), jt_albumtit1.getText(), jt_fechlanza1.getText(), 20));
+//                    artglobal.getAlbum().add(new Album(jt_albumtit.getText(), jt_fechlanza.getText(), 0, 20));
+                    bw.newLine();
+                    bw.flush();
+
+                    JOptionPane.showMessageDialog(this,
+                            "single agregado correctamente");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                try {
+                    bw.close();
+                    fw.close();
+                } catch (IOException ex) {
+                    Logger.getLogger(main.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+            } else {
+                JOptionPane.showMessageDialog(this,
+                        "no se creo");
+            }
+        }
+
+
+    }//GEN-LAST:event_jButton11ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1496,7 +1605,9 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1530,14 +1641,16 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSpinner jSpinner1;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTextField5;
     private javax.swing.JTree jTree1;
     private javax.swing.JTree jTree2;
     private javax.swing.JMenuItem jm_agregar;
     private javax.swing.JPasswordField jp_newpas;
     private javax.swing.JTextField jt_albumtit;
+    private javax.swing.JTextField jt_albumtit1;
+    private javax.swing.JTextField jt_cancion;
     private javax.swing.JTextField jt_edad;
     private javax.swing.JTextField jt_fechlanza;
+    private javax.swing.JTextField jt_fechlanza1;
     private javax.swing.JPasswordField jt_ingresocontra;
     private javax.swing.JTextField jt_ingresousuario;
     private javax.swing.JTextField jt_newartist;

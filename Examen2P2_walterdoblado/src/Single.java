@@ -12,21 +12,21 @@ import java.util.Date;
  */
 public class Single extends Lanzamiento implements Serializable{
 
-    Cancion cancion;
+    String cancion;
 
     public Single() {
     }
 
-    public Single(Cancion cancion, String tittulo, String fechaPub, int contLike) {
+    public Single(String cancion, String tittulo, String fechaPub, int contLike) {
         super(tittulo, fechaPub, contLike);
         this.cancion = cancion;
     }
 
-    public Cancion getCancion() {
+    public String getCancion() {
         return cancion;
     }
 
-    public void setCancion(Cancion cancion) {
+    public void setCancion(String cancion) {
         this.cancion = cancion;
     }
 
