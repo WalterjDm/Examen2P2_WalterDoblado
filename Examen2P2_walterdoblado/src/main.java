@@ -1,20 +1,25 @@
 
 import java.awt.HeadlessException;
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -42,7 +47,7 @@ public class main extends javax.swing.JFrame {
 
         File archivo = null;
 
-        archivo = new File("./artist.wd");
+        archivo = new File("./artista.wd");
 
         if (archivo.exists()) {
 
@@ -181,6 +186,8 @@ public class main extends javax.swing.JFrame {
         jTextField2 = new javax.swing.JTextField();
         jButton9 = new javax.swing.JButton();
         jPanel12 = new javax.swing.JPanel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTree2 = new javax.swing.JTree();
         jButton12 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -504,6 +511,12 @@ public class main extends javax.swing.JFrame {
 
         jPanel8.setBackground(new java.awt.Color(0, 0, 0));
 
+        jTabbedPane1.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jTabbedPane1StateChanged(evt);
+            }
+        });
+
         jLabel16.setText("tittulo");
 
         jLabel17.setText("fecha de lanzamiento");
@@ -650,18 +663,28 @@ public class main extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Crear cancion", jPanel11);
 
+        treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("root");
+        jTree2.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
+        jScrollPane4.setViewportView(jTree2);
+
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
         jPanel12.setLayout(jPanel12Layout);
         jPanel12Layout.setHorizontalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1028, Short.MAX_VALUE)
+            .addGroup(jPanel12Layout.createSequentialGroup()
+                .addGap(116, 116, 116)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(734, Short.MAX_VALUE))
         );
         jPanel12Layout.setVerticalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 465, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel12Layout.createSequentialGroup()
+                .addContainerGap(54, Short.MAX_VALUE)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(49, 49, 49))
         );
 
-        jTabbedPane1.addTab("ListaRep", jPanel12);
+        jTabbedPane1.addTab("Lanzamientos", jPanel12);
 
         jButton12.setText("log out");
         jButton12.addActionListener(new java.awt.event.ActionListener() {
@@ -903,7 +926,7 @@ public class main extends javax.swing.JFrame {
             for (Cliente cliente : user) {
 
                 if (cliente.getUserName().equals(jt_ingresousuario.getText()) && cliente.getContra().equals(jt_ingresocontra.getText())) {
-
+                    clglobal = cliente;
                     jDialog2.pack();
                     jDialog2.setModal(true);
                     jDialog2.setLocationRelativeTo(this);
@@ -912,7 +935,7 @@ public class main extends javax.swing.JFrame {
                     jt_ingresousuario.setText("");
                     jt_ingresocontra.setText("");
                     jDialog2.setAlwaysOnTop(true);
-                    clglobal = cliente;
+
                 } else {
                     JOptionPane.showMessageDialog(null, "nombre o contraseña incorrecta");
                 }
@@ -924,7 +947,7 @@ public class main extends javax.swing.JFrame {
             for (Artista artista : artist) {
 
                 if (artista.getUserName().equals(jt_ingresousuario.getText()) && artista.getContra().equals(jt_ingresocontra.getText())) {
-
+                    artglobal = artista;
                     jDialog3.pack();
                     jDialog3.setModal(true);
                     jDialog3.setLocationRelativeTo(this);
@@ -932,7 +955,7 @@ public class main extends javax.swing.JFrame {
 
                     jt_ingresousuario.setText("");
                     jt_ingresocontra.setText("");
-                    artglobal = artista;
+
                     jDialog3.setAlwaysOnTop(true);
                 } else {
                     JOptionPane.showMessageDialog(null, "nombre o contraseña incorrecta");
@@ -1039,7 +1062,7 @@ public class main extends javax.swing.JFrame {
                         object.flush();
                         object.close();
                         entrada.close();
-                        JOptionPane.showMessageDialog(null, "artista creado");
+                        JOptionPane.showMessageDialog(null, "cliente creado");
 
                     } catch (HeadlessException | IOException e) {
 
@@ -1069,7 +1092,7 @@ public class main extends javax.swing.JFrame {
                                 object.flush();
                                 object.close();
                                 entrada.close();
-                                JOptionPane.showMessageDialog(null, "artista creado");
+                                JOptionPane.showMessageDialog(null, "cliente creado");
 
                             } catch (HeadlessException | IOException e) {
 
@@ -1107,8 +1130,8 @@ public class main extends javax.swing.JFrame {
         // TODO add your handling code here:
 
         for (Artista artista : artist) {
-
-            if (artista.getNombreArt().equals(artglobal.getNombreArt())) {
+            System.out.println(artglobal);
+            if (artista.getUserName().equals(artglobal.getUserName())) {
                 File archivo = null;
                 FileWriter fw = null;
                 BufferedWriter bw = null;
@@ -1137,9 +1160,9 @@ public class main extends javax.swing.JFrame {
                     Logger.getLogger(main.class.getName()).log(Level.SEVERE, null, ex);
                 }
 
-            }else{
-                   JOptionPane.showMessageDialog(this,
-                            "no se creo");
+            } else {
+                JOptionPane.showMessageDialog(this,
+                        "no se creo");
             }
         }
 
@@ -1167,6 +1190,50 @@ public class main extends javax.swing.JFrame {
 
         artglobal = null;
     }//GEN-LAST:event_jButton12ActionPerformed
+
+    private void jTabbedPane1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane1StateChanged
+        // TODO add your handling code here:
+
+        File archivo = null;
+        FileReader fr = null;
+        BufferedReader br = null;
+        DefaultTreeModel m = (DefaultTreeModel) jTree2.getModel();
+        DefaultMutableTreeNode raiz
+                = (DefaultMutableTreeNode) m.getRoot();
+
+        archivo = new File("./album.txt");
+
+        try {
+
+            String linea = "";
+            Scanner lea = new Scanner(archivo);
+            while (lea.hasNext()) {
+                linea += lea.next();
+
+            }
+            System.out.println(linea);
+            String[] split = linea.split("\n");
+            for (int i = 0; i < split.length; i++) {
+                String[] splity = split[i].split(";");
+                DefaultMutableTreeNode idvent = new DefaultMutableTreeNode(splity[0]);
+                DefaultMutableTreeNode nombreven = new DefaultMutableTreeNode(splity[1]);
+                DefaultMutableTreeNode nombrecomp = new DefaultMutableTreeNode(splity[2]);
+                DefaultMutableTreeNode idcarro = new DefaultMutableTreeNode(splity[3]);
+                idvent.add(nombreven);
+                idvent.add(nombrecomp);
+                idvent.add(idcarro);
+                raiz.add(idvent);
+
+            }
+            m.reload();
+            lea.close();
+
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(main.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jTabbedPane1StateChanged
 
     /**
      * @param args the command line arguments
@@ -1210,8 +1277,7 @@ public class main extends javax.swing.JFrame {
     }
     ArrayList<Cliente> user = new ArrayList();
     ArrayList<Artista> artist = new ArrayList();
-    Artista artglobal = null;
-    Cliente clglobal = null;
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
@@ -1266,6 +1332,7 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
@@ -1275,6 +1342,7 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTree jTree1;
+    private javax.swing.JTree jTree2;
     private javax.swing.JPasswordField jp_newpas;
     private javax.swing.JTextField jt_albumtit;
     private javax.swing.JTextField jt_edad;
@@ -1288,4 +1356,6 @@ public class main extends javax.swing.JFrame {
 Artista p;
     Cliente p1;
     Barra ab;
+    Artista artglobal = null;
+    Cliente clglobal = null;
 }
