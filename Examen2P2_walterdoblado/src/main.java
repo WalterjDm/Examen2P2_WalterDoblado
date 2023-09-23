@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -38,16 +39,39 @@ public class main extends javax.swing.JFrame {
         initComponents();
         addartist();
         addaclient();
+        recarga();
         jLabel11.setVisible(false);
         jt_newartist.setVisible(false);
 
+    }
+    
+    public void recarga (){
+        
+         DefaultComboBoxModel modelo
+                = (DefaultComboBoxModel) jComboBox1.getModel();
+         for (Artista artista : artist) {
+            
+        
+                 
+                 
+                 modelo.addElement(artista.getUserName());
+                 
+                 
+             
+                
+             jComboBox1.setModel(modelo);
+             
+           
+        }
+         
+         
     }
 
     public void addartist() throws IOException, ClassNotFoundException {
 
         File archivo = null;
 
-        archivo = new File("./artista.wd");
+        archivo = new File("./artistas.wd");
 
         if (archivo.exists()) {
 
@@ -179,12 +203,12 @@ public class main extends javax.swing.JFrame {
         jButton11 = new javax.swing.JButton();
         jPanel11 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        jt_nomcancion = new javax.swing.JTextField();
         jSpinner1 = new javax.swing.JSpinner();
         jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
         jButton9 = new javax.swing.JButton();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jButton14 = new javax.swing.JButton();
         jPanel12 = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTree2 = new javax.swing.JTree();
@@ -605,15 +629,23 @@ public class main extends javax.swing.JFrame {
 
         jLabel13.setText("jLabel13");
 
-        jTextField1.setText("jTextField1");
+        jt_nomcancion.setText("jTextField1");
 
         jLabel14.setText("jLabel14");
 
-        jLabel15.setText("jLabel15");
-
-        jTextField2.setText("jTextField2");
-
         jButton9.setText("jButton9");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+
+        jButton14.setText("jButton14");
+        jButton14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton14ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
@@ -621,42 +653,47 @@ public class main extends javax.swing.JFrame {
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel11Layout.createSequentialGroup()
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel11Layout.createSequentialGroup()
-                                .addGap(71, 71, 71)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel11Layout.createSequentialGroup()
-                                .addGap(16, 16, 16)
-                                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel11Layout.createSequentialGroup()
                         .addGap(25, 25, 25)
-                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel11Layout.createSequentialGroup()
                         .addGap(254, 254, 254)
                         .addComponent(jButton9)))
-                .addContainerGap(699, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel11Layout.createSequentialGroup()
+                            .addGap(71, 71, 71)
+                            .addComponent(jt_nomcancion, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel11Layout.createSequentialGroup()
+                            .addGap(16, 16, 16)
+                            .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 452, Short.MAX_VALUE)
+                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(307, 307, 307))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jButton14)
+                .addGap(279, 279, 279))
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel11Layout.createSequentialGroup()
-                .addGap(79, 79, 79)
-                .addComponent(jLabel13)
+                .addGap(76, 76, 76)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel13)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jt_nomcancion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29)
                 .addComponent(jLabel14)
                 .addGap(3, 3, 3)
                 .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
-                .addComponent(jLabel15)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 103, Short.MAX_VALUE)
+                .addComponent(jButton14)
+                .addGap(2, 2, 2)
                 .addComponent(jButton9)
                 .addGap(100, 100, 100))
         );
@@ -1000,7 +1037,10 @@ public class main extends javax.swing.JFrame {
 
                     }
 
-                } else {
+                } else if (!(artist.isEmpty())) {
+                    
+                
+
 
                     for (Artista art : artist) {
 
@@ -1068,7 +1108,7 @@ public class main extends javax.swing.JFrame {
 
                     }
 
-                } else {
+                } else if (!(user.isEmpty())) {
 
                     for (Cliente cliente1 : user) {
 
@@ -1200,18 +1240,21 @@ public class main extends javax.swing.JFrame {
         DefaultTreeModel m = (DefaultTreeModel) jTree2.getModel();
         DefaultMutableTreeNode raiz
                 = (DefaultMutableTreeNode) m.getRoot();
+      
 
         archivo = new File("./album.txt");
 
         try {
 
+            
+            
             String linea = "";
             Scanner lea = new Scanner(archivo);
             while (lea.hasNext()) {
                 linea += lea.next();
 
             }
-            System.out.println(linea);
+           
             String[] split = linea.split("\n");
             for (int i = 0; i < split.length; i++) {
                 String[] splity = split[i].split(";");
@@ -1233,7 +1276,64 @@ public class main extends javax.swing.JFrame {
         } catch (IOException ex) {
             Logger.getLogger(main.class.getName()).log(Level.SEVERE, null, ex);
         }
+       
+        
+        
     }//GEN-LAST:event_jTabbedPane1StateChanged
+
+    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
+        // TODO add your handling code here:
+        
+         DefaultComboBoxModel modelo
+                = (DefaultComboBoxModel) jComboBox1.getModel();
+         for (Artista artista : artist) {
+           
+      
+                 
+             
+          
+                 
+                
+                 
+                 modelo.addElement(artista.getUserName());
+                 
+                 
+             
+               
+             jComboBox1.setModel(modelo);
+             
+           
+        }
+    }//GEN-LAST:event_jButton14ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        // TODO add your handling code here:
+        jComboBox1.getSelectedItem();
+        
+        for (Artista artista : artist) {
+            
+            if (artista.getUserName().equals(jComboBox1.getSelectedItem())) {
+                
+                int s = Integer.parseInt(jSpinner1.getValue().toString());
+                
+                for (int i = 0; i < artista.getAlbum().size(); i++) {
+                    
+                    artista.getAlbum().get(i).canciones.add(new Cancion(jt_nomcancion.getText(), s, ""));
+                    
+                    
+                    
+                    
+                    
+                }
+ 
+                
+                
+            }
+            
+        }
+        
+        
+    }//GEN-LAST:event_jButton9ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1284,6 +1384,7 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
+    private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -1292,6 +1393,7 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JDialog jDialog2;
     private javax.swing.JDialog jDialog3;
@@ -1301,7 +1403,6 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
@@ -1338,8 +1439,6 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSpinner jSpinner1;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTree jTree1;
     private javax.swing.JTree jTree2;
@@ -1351,6 +1450,7 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JTextField jt_ingresousuario;
     private javax.swing.JTextField jt_newartist;
     private javax.swing.JTextField jt_newnombre;
+    private javax.swing.JTextField jt_nomcancion;
     private javax.swing.JProgressBar pn;
     // End of variables declaration//GEN-END:variables
 Artista p;

@@ -1,1 +1,2 @@
-hoy;hs;0;20
+tumadreperreando;hoy;0;20
+lamovediza;ayer;0;20
