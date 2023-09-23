@@ -1283,6 +1283,7 @@ public class main extends javax.swing.JFrame {
                 idvent.add(nombrecomp);
                 idvent.add(idcarro);
                 raiz.add(idvent);
+                
 
             }
             m.reload();
